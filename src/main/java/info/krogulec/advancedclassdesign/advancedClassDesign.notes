@@ -1,0 +1,3 @@
+- Local inner class -> wewnątrz metody - nie może być statyczna i nie może mieć modyfikatora dostępu
+- Member inner class -> na poziomie klasy - nie może definiować pól i metod statycznych, ale ma dostęp do zmiennych instancyjnych i statycznych
+- Static inner class -> na poziomie klasy - ma dostęp do zmiennych statycznych
