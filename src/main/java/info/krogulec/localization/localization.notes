@@ -1,0 +1,2 @@
+- Na egzaminie trzeba koniecznie znać hierarchię ładowania resource bundle - najpierw pełne wnioskowane locale w pliku java, potem properties, następnie tylko język (java, następnie properties)
+potem domyśne locale język i kraj, potem domyślne dla języka, domyślne resource bundle. Jeśli nic nie będzie znalezione będzie rzucony wyjątek - MissingResourceException.
