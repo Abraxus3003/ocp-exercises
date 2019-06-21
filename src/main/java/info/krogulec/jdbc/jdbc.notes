@@ -1,0 +1,34 @@
+***Connection***
+-   Connection musi być implementowane w JAR z driverem do bazy danych
+-   Connection może przyjąć 0, dwa lub trzy parametry - jeśli jest int to reprezetuje holdability wtedy oprócz tego parametru jest ResulSet type)
+-   Kiedy podamy w Connection nie obsługiwany enum, wytedy kod się skompiluje, a ten parametr będzie i tak sprowadzony do innego parametru
+
+***Connection string***
+-   Jeśli nie podamy hosta, tylko sam port, przyjmowany jest localhost
+
+***Statement***
+-   Defaultowo statement nie jest scrolowalne - ResultSet.TYPE_FORWARD_ONLY
+-   Trzeba pamiętać, żeby tworzyć nowy statement dla nowych zapytań. Inaczej można trafić na SQLException
+
+
+***ResultSet***
+-   Jest zawsze zamykany, kiedy wykonywane jest kolejne zapytanie, dlatego trzeba uważać na odpwołania, które już są zamknięte i rzucą SQLException
+-   Kolumny są numerowane od 1
+-   Aby wyciągnąć pełną datę, z godziną minutą i sekundą można użyć getTimestamp() . W podobnym celu można osobno użyć getDate() i getTime()
+-   Metody absolute, previous, next, zwracają boolean - true jeśli wiersz istnieje
+-   beforeFirst i afterLast zwracają void !
+
+***Driver***
+-   Podczas tworzenia Connection DriverManager szuka JAR, który w kataluogu META-INF/services ma klasę java.sql.Driver. W tej klasie jest pakiet, gdzie znajduje się
+    implementacja
+-   Przed JDBC 4.0 przed wywołaniem DriverManager.getConnection(), trzeba było wywoływać Class.forName(pełna nazwa klasy Driver)
+
+
+***Global***
+-   Zamykanie zasobów musi być w kolejności odwrotnej do ich tworzenia -> ResultSet, Statement, Connection
+-   Jest 5 transaction levels: 1) TRANSACTION_NONE, 2) TRANSACTION_READ_COMMITED, 3) TRANSACTION_READ_UNCOMMITED, 4) TRANSACTION_REPETABLE_READ, 5) TRANSACTION_SERIALIZABLE
+-   Jeśli w executeQuery użyje się UPDATE to będzie SQLException. Podobnie jak SELECT zastosuje się w executeUpdate()
+
+Do ogarnięcia:
+JdbcRowSet
+DataSource
