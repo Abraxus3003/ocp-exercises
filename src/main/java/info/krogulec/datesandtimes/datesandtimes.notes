@@ -1,0 +1,3 @@
+- Trzeba zwrócić uwagę na wywołanie metod, które nie pasują do danego typu - np. plusYears() na LocalTime
+- Trzeba pamiętać o niemutowalności
+- Tylko ZonedDateTime można przeliczyć na Instant
