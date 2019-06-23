@@ -1,0 +1,3 @@
+- findAny() - jej zachowanie nie jest deterministyczne - nie zawsze zwróci pierwszy obiket w strumieniu
+- mapToInt i analogiczne metody zwracają IntStream i analogicznie inne prymitywne strumienie
+- można stworzyć strumień z różnych typów - wtedy będzie przechowywał obikety
